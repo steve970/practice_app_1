@@ -1,0 +1,18 @@
+Welcome to my Animals app!
+
+New Animals here!
+
+<%= link_to "New Animals!", new_animal_path(@animal) %>
+
+
+
+
+<% @animals.each do |a| %>
+<div>
+<%= link_to a.name, @animal %>
+<%= a.species %>
+<%= a.age %>
+<%= link_to 'Edit', edit_animal_path(a) %>
+<%= link_to 'Delete',animal_path(a), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+<% end %>
